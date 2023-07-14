@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "042C65352A199B6E00601ECB"
-               BuildableName = "ChapterOne.framework"
-               BlueprintName = "ChapterOne"
-               ReferencedContainer = "container:ChapterOne.xcodeproj">
+               BlueprintIdentifier = "04B4D4452A50F3E900A209D4"
+               BuildableName = "ByExample.framework"
+               BlueprintName = "ByExample"
+               ReferencedContainer = "container:ByExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,18 +26,23 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:ByExample.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "042C65AF2A199E8D00601ECB"
-               BuildableName = "ChapterOneTests.xctest"
-               BlueprintName = "ChapterOneTests"
-               ReferencedContainer = "container:ChapterOne.xcodeproj">
+               BlueprintIdentifier = "04B4D44F2A50F3EA00A209D4"
+               BuildableName = "ByExampleTests.xctest"
+               BlueprintName = "ByExampleTests"
+               ReferencedContainer = "container:ByExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -62,10 +67,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "042C65352A199B6E00601ECB"
-            BuildableName = "ChapterOne.framework"
-            BlueprintName = "ChapterOne"
-            ReferencedContainer = "container:ChapterOne.xcodeproj">
+            BlueprintIdentifier = "04B4D4452A50F3E900A209D4"
+            BuildableName = "ByExample.framework"
+            BlueprintName = "ByExample"
+            ReferencedContainer = "container:ByExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

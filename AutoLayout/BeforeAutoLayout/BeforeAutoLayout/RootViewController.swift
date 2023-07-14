@@ -24,6 +24,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.onCreate()
+        self.setRadius()
     }
     
     fileprivate func onCreate() {
@@ -33,6 +34,15 @@ class RootViewController: UIViewController {
     
     fileprivate func setViewConfiguration() {
         self.view.backgroundColor = .white
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    private func setRadius() {
+        let radius = self.greenView.bounds.width / 20
+        self.greenView.layer.cornerRadius = radius
     }
     
     fileprivate func setUpViews() {

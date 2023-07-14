@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "1BFAE192-31D7-43C4-8383-565F2BF12D02",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ByExample.xcodeproj",
+        "identifier" : "04B4D44F2A50F3EA00A209D4",
+        "name" : "ByExampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}
