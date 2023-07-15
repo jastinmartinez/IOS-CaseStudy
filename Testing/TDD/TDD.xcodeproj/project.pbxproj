@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		04015F4C2A6333CB007D7FD1 /* TDD.docc in Sources */ = {isa = PBXBuildFile; fileRef = 04015F4B2A6333CB007D7FD1 /* TDD.docc */; };
 		04015F522A6333CC007D7FD1 /* TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04015F472A6333CB007D7FD1 /* TDD.framework */; };
-		04015F572A6333CC007D7FD1 /* TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04015F562A6333CC007D7FD1 /* TDDTests.swift */; };
+		04015F572A6333CC007D7FD1 /* FoundationChapterThreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04015F562A6333CC007D7FD1 /* FoundationChapterThreeTest.swift */; };
 		04015F582A6333CC007D7FD1 /* TDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 04015F4A2A6333CB007D7FD1 /* TDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04CA29D52A6334C5004966B1 /* Foundations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA29D42A6334C5004966B1 /* Foundations.swift */; };
+		04CA29D52A6334C5004966B1 /* FoundationChapterThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA29D42A6334C5004966B1 /* FoundationChapterThree.swift */; };
+		04F328922A6355890097037E /* AppLaunchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F328912A6355890097037E /* AppLaunchTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +30,10 @@
 		04015F4A2A6333CB007D7FD1 /* TDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDD.h; sourceTree = "<group>"; };
 		04015F4B2A6333CB007D7FD1 /* TDD.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TDD.docc; sourceTree = "<group>"; };
 		04015F512A6333CC007D7FD1 /* TDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04015F562A6333CC007D7FD1 /* TDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDTests.swift; sourceTree = "<group>"; };
+		04015F562A6333CC007D7FD1 /* FoundationChapterThreeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationChapterThreeTest.swift; sourceTree = "<group>"; };
 		04015F612A633430007D7FD1 /* TDD.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TDD.xctestplan; sourceTree = "<group>"; };
-		04CA29D42A6334C5004966B1 /* Foundations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundations.swift; sourceTree = "<group>"; };
+		04CA29D42A6334C5004966B1 /* FoundationChapterThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationChapterThree.swift; sourceTree = "<group>"; };
+		04F328912A6355890097037E /* AppLaunchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,7 @@
 		04015F492A6333CB007D7FD1 /* TDD */ = {
 			isa = PBXGroup;
 			children = (
-				04CA29D42A6334C5004966B1 /* Foundations.swift */,
+				04F3288E2A63551C0097037E /* Foundation */,
 				04015F4A2A6333CB007D7FD1 /* TDD.h */,
 				04015F4B2A6333CB007D7FD1 /* TDD.docc */,
 			);
@@ -85,9 +87,50 @@
 		04015F552A6333CC007D7FD1 /* TDDTests */ = {
 			isa = PBXGroup;
 			children = (
-				04015F562A6333CC007D7FD1 /* TDDTests.swift */,
+				04F3288B2A6354EA0097037E /* Foundation */,
 			);
 			path = TDDTests;
+			sourceTree = "<group>";
+		};
+		04F3288B2A6354EA0097037E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				04F3288D2A6354F80097037E /* Chapter3 */,
+				04F3288C2A6354F00097037E /* Chapter4 */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		04F3288C2A6354F00097037E /* Chapter4 */ = {
+			isa = PBXGroup;
+			children = (
+				04F328912A6355890097037E /* AppLaunchTest.swift */,
+			);
+			path = Chapter4;
+			sourceTree = "<group>";
+		};
+		04F3288D2A6354F80097037E /* Chapter3 */ = {
+			isa = PBXGroup;
+			children = (
+				04015F562A6333CC007D7FD1 /* FoundationChapterThreeTest.swift */,
+			);
+			path = Chapter3;
+			sourceTree = "<group>";
+		};
+		04F3288E2A63551C0097037E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				04F3288F2A6355230097037E /* Chapter3 */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		04F3288F2A6355230097037E /* Chapter3 */ = {
+			isa = PBXGroup;
+			children = (
+				04CA29D42A6334C5004966B1 /* FoundationChapterThree.swift */,
+			);
+			name = Chapter3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CA29D52A6334C5004966B1 /* Foundations.swift in Sources */,
+				04CA29D52A6334C5004966B1 /* FoundationChapterThree.swift in Sources */,
 				04015F4C2A6333CB007D7FD1 /* TDD.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04015F572A6333CC007D7FD1 /* TDDTests.swift in Sources */,
+				04F328922A6355890097037E /* AppLaunchTest.swift in Sources */,
+				04015F572A6333CC007D7FD1 /* FoundationChapterThreeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

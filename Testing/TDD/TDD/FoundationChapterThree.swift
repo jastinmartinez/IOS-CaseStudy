@@ -1,5 +1,5 @@
 //
-//  Foundations.swift
+//  FoundationChapterThree.swift
 //  TDD
 //
 //  Created by Jastin on 15/7/23.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class Foundations {
+final class FoundationChapterThree {
     
     private (set) var area: Int
     
