@@ -10,27 +10,41 @@ import XCTest
 
 final class TDDTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    /// Loop Converage
+    func test_commaSeparated_from2to4_shouldReturnSomething() {
+        let result = Foundations.commaSeparated(from: 2, to: 4)
+        XCTAssertEqual(result, "2,3,4")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    /// Loop Converage
+    func test_commaSeparated_from2To2_shouldReturnWithNoComma() {
+        let result = Foundations.commaSeparated(from: 2, to: 2)
+        XCTAssertEqual(result, "2")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_area_withWidth7_shouldBe49() {
+        let sut = Foundations()
+        sut.width = 7
+        XCTAssertEqual(sut.area, 49)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_nunmberToString_inputNumber2_Return2AsString() {
+        XCTAssertEqual(Foundations.numberToString(2), "2")
     }
-
+    
+    func test_nunmberToString_inputNumberNegative2_ReturnNegative2AsString() {
+        XCTAssertEqual(Foundations.numberToString(-2), "-2")
+    }
+    
+    func test_nunmberToString_inputNumberZero_ReturnEmpty() {
+        XCTAssertEqual(Foundations.numberToString(0), "")
+    }
+    
+    func test_numberToString_InputMultipleNumbers_ReturnMultiplesNumberSeparatedByComma() {
+        XCTAssertEqual(Foundations.numberToString(12), "1,2")
+    }
+    
+    func test_numberToString_InputMultipleNegativeNumbers_ReturnMultiplesNegativeNumberSeparatedByComma() {
+        XCTAssertEqual(Foundations.numberToString(-12), "-1,-2")
+    }
 }
