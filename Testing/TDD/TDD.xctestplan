@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "4E72C3EB-AC91-4700-BC0A-830E127CEBC5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TDD.xcodeproj",
+        "identifier" : "04015F502A6333CC007D7FD1",
+        "name" : "TDDTests"
+      }
+    }
+  ],
+  "version" : 1
+}
