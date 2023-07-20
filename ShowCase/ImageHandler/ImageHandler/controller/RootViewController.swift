@@ -28,14 +28,11 @@ class RootViewController: UIViewController {
         xTableView.register(UITableViewCell.self, forCellReuseIdentifier: ImageCellKey.key.rawValue)
         xTableView.dataSource = self
         xTableView.allowsSelection = false
-        xTableView.prefetchDataSource = self
         return xTableView
     }()
     
     private var photoList = [Photo]()
-    private var operations = [IndexPath: ImageOperation]()
-    private var operationQueue = OperationQueue()
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.onCreate()
@@ -80,23 +77,8 @@ class RootViewController: UIViewController {
     }
 }
 
-extension RootViewController: UITableViewDataSource, UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            let imageOperation = ImageOperation(photo: self.photoList[indexPath.row],
-                                                dataRepositoryProtocol: self.dataRepositoryProtocol)
-            self.operations[indexPath] = imageOperation
-            self.operationQueue.addOperation(imageOperation)
-        }
-    }
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let imageOperation = self.operations[indexPath] {
-                imageOperation.cancel()
-                self.operations[indexPath] = nil
-            }
-        }
-    }
+extension RootViewController: UITableViewDataSource {
+  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.photoList.count
@@ -104,26 +86,18 @@ extension RootViewController: UITableViewDataSource, UITableViewDataSourcePrefet
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let photoTableViewCell = tableView.dequeueReusableCell(withIdentifier: ImageCellKey.key.rawValue)!
-        if let imageOperation = self.operations[indexPath] {
-            imageOperation.dataCompletion = { image in
-                DispatchQueue.main.async {
-                    var content = UIListContentConfiguration.cell()
-                    content.image = image
-                    photoTableViewCell.contentConfiguration = content
-                }
-            }
-        } else {
-            let imageOperation = ImageOperation(photo: self.photoList[indexPath.row],
-                                                dataRepositoryProtocol: self.dataRepositoryProtocol)
-            imageOperation.dataCompletion = { image in
-                DispatchQueue.main.async {
-                    var content = UIListContentConfiguration.cell()
-                    content.image = image
-                    photoTableViewCell.contentConfiguration = content
-                }
-            }
-            self.operations[indexPath] = imageOperation
-            self.operationQueue.addOperation(imageOperation)
+        let concurrentQueue = DispatchQueue(label: "image.downloader.com", qos: .userInteractive, attributes: .concurrent)
+        concurrentQueue.async {
+            self.dataRepositoryProtocol?.getPhotoList(for: self.photoList[indexPath.row].url, completion: { dataRepositoryProtocolResult in
+                switch dataRepositoryProtocolResult {
+                case .success(let success):
+                    if let image = UIImage(data: success) {
+                       print(indexPath)
+                    }
+                case .failure(let failure):
+                    print(failure)
+                } }
+            )
         }
         return photoTableViewCell
     }
@@ -135,26 +109,3 @@ extension RootViewController {
     }
 }
 
-
-class ImageOperation: Operation {
-    private let photo: Photo
-    private let dataRepositoryProtocol: DataRepositoryProtocol?
-    var dataCompletion: ((UIImage) -> Void)? = nil
-    required init(photo: Photo, dataRepositoryProtocol: DataRepositoryProtocol?) {
-        self.photo = photo
-        self.dataRepositoryProtocol = dataRepositoryProtocol
-    }
-    
-    override func start() {
-        self.dataRepositoryProtocol?.getPhotoList(for: photo.url, completion: { dataRepositoryProtocolResult in
-            switch dataRepositoryProtocolResult {
-            case .success(let success):
-                if let image = UIImage(data: success) {
-                    self.dataCompletion?(image)
-                }
-            case .failure(let failure):
-                print(failure)
-            } }
-        )
-    }
-}
