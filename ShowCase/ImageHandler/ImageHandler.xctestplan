@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "64C3678B-A526-4A23-86C5-A8D173BAB2CD",
+      "name" : "Configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ImageHandler.xcodeproj",
+        "identifier" : "047A620C2A688DB20034C263",
+        "name" : "ImageHandlerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
