@@ -13,6 +13,8 @@
 		048352E12A6997F5002A6C48 /* MySingletonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352E02A6997F5002A6C48 /* MySingletonViewController.swift */; };
 		048352E32A699897002A6C48 /* ​MySingletonAnalytics​.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352E22A699897002A6C48 /* ​MySingletonAnalytics​.swift */; };
 		048352E52A6998FF002A6C48 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352E42A6998FF002A6C48 /* Analytics.swift */; };
+		048352E72A699C99002A6C48 /* OverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352E62A699C98002A6C48 /* OverrideViewController.swift */; };
+		048352E92A699D3E002A6C48 /* OverrideViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352E82A699D3E002A6C48 /* OverrideViewControllerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		048352E02A6997F5002A6C48 /* MySingletonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySingletonViewController.swift; sourceTree = "<group>"; };
 		048352E22A699897002A6C48 /* ​MySingletonAnalytics​.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "​MySingletonAnalytics​.swift"; sourceTree = "<group>"; };
 		048352E42A6998FF002A6C48 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		048352E62A699C98002A6C48 /* OverrideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideViewController.swift; sourceTree = "<group>"; };
+		048352E82A699D3E002A6C48 /* OverrideViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideViewControllerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				048352E02A6997F5002A6C48 /* MySingletonViewController.swift */,
 				048352E22A699897002A6C48 /* ​MySingletonAnalytics​.swift */,
 				048352E42A6998FF002A6C48 /* Analytics.swift */,
+				048352E62A699C98002A6C48 /* OverrideViewController.swift */,
 			);
 			path = Chapter6HardDependencies;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				048352CF2A6997C1002A6C48 /* MySingletonViewControllerTests.swift */,
+				048352E82A699D3E002A6C48 /* OverrideViewControllerTest.swift */,
 			);
 			path = Chapter6HardDependenciesTests;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			files = (
 				048352E32A699897002A6C48 /* ​MySingletonAnalytics​.swift in Sources */,
 				048352E12A6997F5002A6C48 /* MySingletonViewController.swift in Sources */,
+				048352E72A699C99002A6C48 /* OverrideViewController.swift in Sources */,
 				048352E52A6998FF002A6C48 /* Analytics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048352E92A699D3E002A6C48 /* OverrideViewControllerTest.swift in Sources */,
 				048352D02A6997C1002A6C48 /* MySingletonViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
