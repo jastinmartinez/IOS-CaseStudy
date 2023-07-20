@@ -21,6 +21,8 @@
 		048352F22A69A1ED002A6C48 /* InstancePropertyViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352F12A69A1ED002A6C48 /* InstancePropertyViewControllerTest.swift */; };
 		048352F42A69A30F002A6C48 /* ClosureInitializerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352F32A69A30F002A6C48 /* ClosureInitializerViewController.swift */; };
 		048352F62A69A3B0002A6C48 /* ClosureInitializerViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352F52A69A3B0002A6C48 /* ClosureInitializerViewControllerTest.swift */; };
+		048352F82A69A4A1002A6C48 /* ClosureProperyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352F72A69A4A1002A6C48 /* ClosureProperyViewController.swift */; };
+		048352FA2A69A4EA002A6C48 /* ClosePropertyViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048352F92A69A4EA002A6C48 /* ClosePropertyViewControllerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		048352F12A69A1ED002A6C48 /* InstancePropertyViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancePropertyViewControllerTest.swift; sourceTree = "<group>"; };
 		048352F32A69A30F002A6C48 /* ClosureInitializerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureInitializerViewController.swift; sourceTree = "<group>"; };
 		048352F52A69A3B0002A6C48 /* ClosureInitializerViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureInitializerViewControllerTest.swift; sourceTree = "<group>"; };
+		048352F72A69A4A1002A6C48 /* ClosureProperyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureProperyViewController.swift; sourceTree = "<group>"; };
+		048352F92A69A4EA002A6C48 /* ClosePropertyViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosePropertyViewControllerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				048352EA2A699F6B002A6C48 /* InstanceInitializersViewController.swift */,
 				048352EE2A69A11B002A6C48 /* InstancePropertyViewController.swift */,
 				048352F32A69A30F002A6C48 /* ClosureInitializerViewController.swift */,
+				048352F72A69A4A1002A6C48 /* ClosureProperyViewController.swift */,
 			);
 			path = Chapter6HardDependencies;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				048352EC2A69A02F002A6C48 /* InstanceInitializersViewControllerTest.swift */,
 				048352F12A69A1ED002A6C48 /* InstancePropertyViewControllerTest.swift */,
 				048352F52A69A3B0002A6C48 /* ClosureInitializerViewControllerTest.swift */,
+				048352F92A69A4EA002A6C48 /* ClosePropertyViewControllerTest.swift */,
 			);
 			path = Chapter6HardDependenciesTests;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			files = (
 				048352E32A699897002A6C48 /* ​MySingletonAnalytics​.swift in Sources */,
 				048352E12A6997F5002A6C48 /* MySingletonViewController.swift in Sources */,
+				048352F82A69A4A1002A6C48 /* ClosureProperyViewController.swift in Sources */,
 				048352EB2A699F6B002A6C48 /* InstanceInitializersViewController.swift in Sources */,
 				048352F42A69A30F002A6C48 /* ClosureInitializerViewController.swift in Sources */,
 				048352E72A699C99002A6C48 /* OverrideViewController.swift in Sources */,
@@ -241,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048352FA2A69A4EA002A6C48 /* ClosePropertyViewControllerTest.swift in Sources */,
 				048352F62A69A3B0002A6C48 /* ClosureInitializerViewControllerTest.swift in Sources */,
 				048352F22A69A1ED002A6C48 /* InstancePropertyViewControllerTest.swift in Sources */,
 				048352E92A699D3E002A6C48 /* OverrideViewControllerTest.swift in Sources */,
