@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "1AD79134-1A6F-4E58-9D6F-D98D93D160DB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Chapter6HardDependencies.xcodeproj",
+        "identifier" : "048352C92A6997C1002A6C48",
+        "name" : "Chapter6HardDependenciesTests"
+      }
+    }
+  ],
+  "version" : 1
+}
