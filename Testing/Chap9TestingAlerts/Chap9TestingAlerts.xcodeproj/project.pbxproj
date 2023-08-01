@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043366E02A78910B00E4F590 /* ViewControllerPresentationSpy in Frameworks */ = {isa = PBXBuildFile; productRef = 043366DF2A78910B00E4F590 /* ViewControllerPresentationSpy */; };
 		043769AD2A7868FD00668A2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043769AC2A7868FD00668A2C /* AppDelegate.swift */; };
 		043769AF2A7868FD00668A2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043769AE2A7868FD00668A2C /* SceneDelegate.swift */; };
 		043769B12A7868FD00668A2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043769B02A7868FD00668A2C /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043366E02A78910B00E4F590 /* ViewControllerPresentationSpy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = Chap9TestingAlerts;
+			packageProductDependencies = (
+				043366DF2A78910B00E4F590 /* ViewControllerPresentationSpy */,
+			);
 			productName = Chap9TestingAlerts;
 			productReference = 043769A92A7868FD00668A2C /* Chap9TestingAlerts.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 043769A02A7868FD00668A2C;
+			packageReferences = (
+				043366DE2A78910B00E4F590 /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */,
+			);
 			productRefGroup = 043769AA2A7868FD00668A2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -602,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		043366DE2A78910B00E4F590 /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonreid/ViewControllerPresentationSpy.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		043366DF2A78910B00E4F590 /* ViewControllerPresentationSpy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 043366DE2A78910B00E4F590 /* XCRemoteSwiftPackageReference "ViewControllerPresentationSpy" */;
+			productName = ViewControllerPresentationSpy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 043769A12A7868FD00668A2C /* Project object */;
 }
