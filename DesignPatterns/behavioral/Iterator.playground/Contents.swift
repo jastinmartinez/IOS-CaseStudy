@@ -70,33 +70,6 @@ final class BreakFastIterator: Iterator {
     }
 }
 
-final class Lunch: Aggregate {
-    private var dicMenuItem = [Int: MenuItem]()
-    typealias T = LunchIterator
-    
-    func createIterator() -> LunchIterator {
-        return LunchIterator(dicMenuItem: self.dicMenuItem)
-    }
-}
-
-final class LunchIterator: Iterator {
-    typealias T = MenuItem
-    
-    private let dicMenuItem:[Int: MenuItem]
-    
-    init(dicMenuItem: [Int: MenuItem]) {
-        self.dicMenuItem = dicMenuItem
-    }
-    
-    func next() -> MenuItem {
-        
-    }
-    
-    func hasNext() -> Bool {
-        
-    }
-}
-
 
 // the abstract class serving the available menu
 final class WaitTress {
