@@ -1,0 +1,6 @@
+framework module Pods_Essential_EssentialUITests {
+  umbrella header "Pods-Essential-EssentialUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
