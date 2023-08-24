@@ -48,7 +48,57 @@ for id in ids {
 
 
 group.notify(queue: .global()) {
-    print(imageList.count)
-    print(ids.count)
+    print(imageList.count == ids.count)
+    imageList = []
+    PlaygroundPage.current.finishExecution()
+}
+
+let concurrentOperations = 5
+let dispatchSemaphore = DispatchSemaphore(value: concurrentOperations)
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+for id in ids {
+    queue.async(group: group, execute: {
+        guard let url = URL(string: base + id) else {
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        group.enter()
+        dispatchSemaphore.wait()
+        print("start with \(id)")
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            defer {
+                dispatchSemaphore.signal()
+                group.leave()
+            }
+            guard error == nil else {
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                guard response.statusCode == 200 else {
+                    return
+                }
+                
+                guard let data = data else {
+                    return
+                }
+             
+                guard let image = UIImage(data: data) else {
+                    return
+                }
+                
+                imageList.append(image)
+                print("end with \(id)")
+            }
+        }.resume()
+    })
+}
+
+
+group.notify(queue: .global()) {
+    print(imageList.count == ids.count)
+    imageList = []
     PlaygroundPage.current.finishExecution()
 }
