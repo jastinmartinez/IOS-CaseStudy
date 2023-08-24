@@ -1,7 +1,7 @@
 import UIKit
+import PlaygroundSupport
 
-var greeting = "Hello, playground"
-
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 
 // group some task
@@ -13,7 +13,7 @@ let concurrentQueue = DispatchConcurrentQueue(label: "com.concurrent")
 var timer: Double {
     return Double.random(in: 1...5)
 }
-var counter = 0
+
 let workItem = DispatchWorkItem {
     let timer = timer
     print("start: \(timer)")
@@ -51,7 +51,51 @@ group.notify(queue: .global()) {
     print("all task attach to the group finish 2, this work event if it's on diferent queues")
 }
 
-// there's some
+// if you wanna make sure you're waiting for any aync call inside a func you can still use group to manage that
 
 
+let someSerialQueue = DispatchSerialQueue(label: "some.serial.queue")
 
+var randomTimer: Double {
+    return Double.random(in: 1...10)
+}
+
+func addTwoNumbers(lhs: Int, lhr: Int, completion: @escaping (Int) -> Void) {
+    Thread.sleep(forTimeInterval: Date().distance(to: Date.now + 1))
+    completion(lhs + lhr)
+}
+
+func addTwoNumbersInGroup(group: DispatchGroup,lhs: Int, lhr: Int, completion: @escaping (Int) -> Void) {
+    var sumGroupTotal = 0
+    someSerialQueue.async(group: group) {
+        addTwoNumbers(lhs: lhs, lhr: lhr) { sum in
+            Thread.sleep(forTimeInterval: Date().distance(to: Date.now + 1))
+            sumGroupTotal = sum
+        }
+    }
+    group.notify(queue: .global()) {
+        completion(sumGroupTotal)
+    }
+}
+
+// test `addTwoNumbers` && `addTwoNumbersInGroup` completion when using loop
+
+var numberGenerator: Int {
+    return Int.random(in: 1...100)
+}
+
+var counter = 5
+let someGroup = DispatchGroup()
+while counter > 0 {
+    print(" im just less sync \(counter)")
+
+    addTwoNumbersInGroup(group: someGroup, lhs: numberGenerator, lhr: numberGenerator) { sum in
+        print("addTwoNumbersInGroup: \(sum)")
+    }
+    
+    addTwoNumbers(lhs: numberGenerator, lhr: numberGenerator) { sum in
+        print("addTwoNumbers: \(sum)")
+    }
+  
+    counter -= 1
+}
