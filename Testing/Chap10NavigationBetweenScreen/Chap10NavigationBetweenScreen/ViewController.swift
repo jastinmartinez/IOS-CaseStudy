@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 }
 
 final class CodeNextViewController: UIViewController {
-    private let label: UILabel = {
+     let label: UILabel = {
         let xLabel = UILabel()
         xLabel.translatesAutoresizingMaskIntoConstraints = false
         return xLabel
