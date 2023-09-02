@@ -10,6 +10,7 @@ import XCTest
 
 final class Chap10NavigationBetweenScreenTests: XCTestCase {
     
+    private var nav: SpyNavigationController!
     private var sut: ViewController!
     
     override func setUp() {
@@ -32,9 +33,16 @@ final class Chap10NavigationBetweenScreenTests: XCTestCase {
         XCTAssertEqual(codeNextViewController?.label.text, "Push from code")
     }
     
-    private func navigationControllerFactory() -> UINavigationController {
+    func test_pushViewControllerFromCode_ShouldReturnCodeNextViewControllerAnimated() {
+        self.tap(self.sut.codePushButton)
+        XCTAssertTrue(self.nav.pushViewControllerAnimatedList.count > 0)
+    }
+    
+    private func navigationControllerFactory() -> SpyNavigationController {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        return mainStoryBoard.instantiateViewController(identifier:  "NavController")
+        let sut: UINavigationController = mainStoryBoard.instantiateViewController(identifier:  "NavController")
+        let spyNavigationController = SpyNavigationController(rootViewController: sut.topViewController!)
+        return spyNavigationController
     }
     
     private func tap(_ button: UIButton) {
@@ -43,8 +51,8 @@ final class Chap10NavigationBetweenScreenTests: XCTestCase {
     }
     
     private func setSutAndLoadViewIfNeed() {
-        let nav = self.navigationControllerFactory()
-        self.sut = nav.topViewController as? ViewController
+        self.nav = self.navigationControllerFactory()
+        self.sut = self.nav.topViewController as? ViewController
         self.sut.loadViewIfNeeded()
     }
     
@@ -52,4 +60,11 @@ final class Chap10NavigationBetweenScreenTests: XCTestCase {
         RunLoop.current.run(until: Date())
     }
     
+    private class SpyNavigationController: UINavigationController {
+        private (set) var pushViewControllerAnimatedList = [Bool]()
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            super.pushViewController(viewController, animated: animated)
+            self.pushViewControllerAnimatedList.append(animated)
+        }
+    }
 }
