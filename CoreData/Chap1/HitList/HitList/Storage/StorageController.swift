@@ -10,13 +10,17 @@ import CoreData
 
 protocol StorageControllerProtocol: AnyObject {
     func save(name: String)
-    func get() -> [String]
+    var people: [String] { get }
 }
 
 final class StorageController: StorageControllerProtocol {
-  
-    private var people = [NSManagedObject]()
+    
+    private var objects = [NSManagedObject]()
     private let persistentContainer: NSPersistentContainer
+    
+    internal var people: [String] {
+        self.objects.compactMap({ $0.value(forKey: Constant.name.rawValue) as? String})
+    }
     
     init() {
         self.persistentContainer = NSPersistentContainer(name: Constant.contaniner.rawValue)
@@ -45,14 +49,10 @@ final class StorageController: StorageControllerProtocol {
                                      entity: entity,
                                      manageObjectContext: manageObjectContext)
             try self.persistentContainer.viewContext.save()
-            self.people.append(person)
+            self.objects.append(person)
         } catch let error as NSError {
             fatalError("could not save. \(error), \(error.userInfo)")
         }
-    }
-    
-    func get() -> [String] {
-        return self.people.lazy.compactMap({ $0.value(forKey: Constant.name.rawValue) as? String})
     }
 }
 
