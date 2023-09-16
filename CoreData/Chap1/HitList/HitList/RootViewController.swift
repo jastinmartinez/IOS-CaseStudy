@@ -9,10 +9,6 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    private let addButton: UIButton = {
-        return UIButton()
-    }()
-    
     private let hitListTableView: UITableView = {
         let xTableView = UITableView()
         xTableView.backgroundColor = .white
