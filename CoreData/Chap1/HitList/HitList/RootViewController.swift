@@ -7,15 +7,18 @@
 
 import UIKit
 
+
 class RootViewController: UIViewController {
     
     private let hitListTableView: UITableView = {
         let xTableView = UITableView()
         xTableView.backgroundColor = .white
-        xTableView.register(UITableViewCell.self, forCellReuseIdentifier: "hitListCell")
+        xTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.hitListCell.rawValue)
         xTableView.translatesAutoresizingMaskIntoConstraints = false
         return xTableView
     }()
+    
+    private var names = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +29,15 @@ class RootViewController: UIViewController {
         self.setViewTitle()
         self.setUpAddNewButton()
         self.setUpHitListTableView()
+        self.setHitListTableViewDelegates()
     }
     
     private func setViewTitle() {
         self.title = "The List"
+    }
+    
+    private func setHitListTableViewDelegates() {
+        self.hitListTableView.dataSource = self
     }
     
     private func setUpHitListTableView() {
@@ -46,5 +54,23 @@ class RootViewController: UIViewController {
     
     @objc private func addNewActionButton(_ action: UIBarItem) {
         // Action
+    }
+}
+
+extension RootViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let hitListCell = tableView.dequeueReusableCell(withIdentifier: Constant.hitListCell.rawValue, for: indexPath)
+        hitListCell.textLabel?.text = self.names[indexPath.row]
+        return hitListCell
+    }
+}
+
+extension RootViewController {
+    private enum Constant: String {
+        case hitListCell
     }
 }
