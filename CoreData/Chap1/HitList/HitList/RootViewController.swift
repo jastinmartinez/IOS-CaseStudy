@@ -12,6 +12,7 @@ class RootViewController: UIViewController {
     private let hitListTableView: UITableView = {
         let xTableView = UITableView()
         xTableView.backgroundColor = .white
+        xTableView.register(UITableViewCell.self, forCellReuseIdentifier: "hitListCell")
         xTableView.translatesAutoresizingMaskIntoConstraints = false
         return xTableView
     }()
