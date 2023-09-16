@@ -12,6 +12,7 @@
 		04D4FA402AB6268D00AC679C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA3F2AB6268D00AC679C /* RootViewController.swift */; };
 		04D4FA452AB6269100AC679C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D4FA442AB6269100AC679C /* Assets.xcassets */; };
 		04D4FA482AB6269100AC679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D4FA462AB6269100AC679C /* LaunchScreen.storyboard */; };
+		04D4FA512AB62E7F00AC679C /* HitList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA4F2AB62E7F00AC679C /* HitList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		04D4FA442AB6269100AC679C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D4FA472AB6269100AC679C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D4FA492AB6269100AC679C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D4FA502AB62E7F00AC679C /* HitList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				04D4FA442AB6269100AC679C /* Assets.xcassets */,
 				04D4FA462AB6269100AC679C /* LaunchScreen.storyboard */,
 				04D4FA492AB6269100AC679C /* Info.plist */,
+				04D4FA4F2AB62E7F00AC679C /* HitList.xcdatamodeld */,
 			);
 			path = HitList;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D4FA402AB6268D00AC679C /* RootViewController.swift in Sources */,
+				04D4FA512AB62E7F00AC679C /* HitList.xcdatamodeld in Sources */,
 				04D4FA3C2AB6268D00AC679C /* AppDelegate.swift in Sources */,
 				04D4FA3E2AB6268D00AC679C /* SceneDelegate.swift in Sources */,
 			);
@@ -349,6 +353,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04D4FA4F2AB62E7F00AC679C /* HitList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04D4FA502AB62E7F00AC679C /* HitList.xcdatamodel */,
+			);
+			currentVersion = 04D4FA502AB62E7F00AC679C /* HitList.xcdatamodel */;
+			path = HitList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04D4FA302AB6268D00AC679C /* Project object */;
 }
