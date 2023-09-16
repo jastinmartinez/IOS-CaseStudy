@@ -9,7 +9,12 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    private let hitistTableView: UITableView = {
+    
+    private let addButton: UIButton = {
+        return UIButton()
+    }()
+    
+    private let hitListTableView: UITableView = {
         let xTableView = UITableView()
         xTableView.backgroundColor = .white
         xTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,10 +27,24 @@ class RootViewController: UIViewController {
     }
     
     private func onCreate() {
-        self.view.addSubview(self.hitistTableView)
-        NSLayoutConstraint.activate([self.hitistTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-                                     self.hitistTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-                                     self.hitistTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-                                     self.hitistTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)])
+        self.setUpAddNewButton()
+        self.setUpHitListTableView()
+    }
+    
+    
+    private func setUpHitListTableView() {
+        self.view.addSubview(self.hitListTableView)
+        NSLayoutConstraint.activate([self.hitListTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                                     self.hitListTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+                                     self.hitListTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+                                     self.hitListTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)])
+    }
+    
+    private func setUpAddNewButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(self.addNewActionButton(_:)))
+    }
+    
+    @objc private func addNewActionButton(_ action: UIBarItem) {
+        // Action
     }
 }
