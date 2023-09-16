@@ -53,7 +53,24 @@ class RootViewController: UIViewController {
     }
     
     @objc private func addNewActionButton(_ action: UIBarItem) {
-        // Action
+        self.setANameAlertController()
+    }
+    
+    private func setANameAlertController() {
+        let alertController = UIAlertController(title: "New Name", message: "Add a new name", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+            guard let textfield = alertController.textFields?.first,
+                  let nameToSave = textfield.text else {
+                return
+            }
+            self.names.append(nameToSave)
+            self.hitListTableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addTextField()
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        self.present(alertController, animated: true)
     }
 }
 
@@ -64,6 +81,7 @@ extension RootViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hitListCell = tableView.dequeueReusableCell(withIdentifier: Constant.hitListCell.rawValue, for: indexPath)
+        hitListCell.selectionStyle = .none
         hitListCell.textLabel?.text = self.names[indexPath.row]
         return hitListCell
     }
