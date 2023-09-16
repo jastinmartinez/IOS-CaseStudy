@@ -9,7 +9,6 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    
     private let addButton: UIButton = {
         return UIButton()
     }()
@@ -27,10 +26,14 @@ class RootViewController: UIViewController {
     }
     
     private func onCreate() {
+        self.setViewTitle()
         self.setUpAddNewButton()
         self.setUpHitListTableView()
     }
     
+    private func setViewTitle() {
+        self.title = "The List"
+    }
     
     private func setUpHitListTableView() {
         self.view.addSubview(self.hitListTableView)
