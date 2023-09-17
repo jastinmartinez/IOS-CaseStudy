@@ -37,6 +37,11 @@ class RootViewController: UIViewController {
         self.setUpAddNewButton()
         self.setUpHitListTableView()
         self.setHitListTableViewDelegates()
+        self.loadFromStorage()
+    }
+    
+    private func loadFromStorage() {
+        self.storageControllerProtocol.load()
     }
     
     private func setViewTitle() {

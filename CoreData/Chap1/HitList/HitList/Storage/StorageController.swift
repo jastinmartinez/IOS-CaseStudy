@@ -10,6 +10,7 @@ import CoreData
 
 protocol StorageControllerProtocol: AnyObject {
     func save(name: String)
+    func load()
     var people: [String] { get }
 }
 
@@ -50,6 +51,16 @@ final class StorageController: StorageControllerProtocol {
                                      manageObjectContext: manageObjectContext)
             try self.persistentContainer.viewContext.save()
             self.objects.append(person)
+        } catch let error as NSError {
+            fatalError("could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func load() {
+        let manageObjectContext = self.persistentContainer.viewContext
+        let fetchObjectsRequest = NSFetchRequest<NSManagedObject>(entityName: Constant.entity.rawValue)
+        do {
+            self.objects = try manageObjectContext.fetch(fetchObjectsRequest)
         } catch let error as NSError {
             fatalError("could not save. \(error), \(error.userInfo)")
         }
