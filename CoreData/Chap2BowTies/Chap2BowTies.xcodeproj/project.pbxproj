@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04B5F5432ABA5AEF008615F2 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5F5422ABA5AEF008615F2 /* ColorAttributeTransformer.swift */; };
+		04B5F5472ABA5F31008615F2 /* BowTie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5F5462ABA5F31008615F2 /* BowTie.swift */; };
 		04D4FA872AB7B1F700AC679C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA862AB7B1F700AC679C /* AppDelegate.swift */; };
 		04D4FA892AB7B1F700AC679C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA882AB7B1F700AC679C /* SceneDelegate.swift */; };
 		04D4FA8B2AB7B1F700AC679C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA8A2AB7B1F700AC679C /* RootViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		04B5F5422ABA5AEF008615F2 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
+		04B5F5462ABA5F31008615F2 /* BowTie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowTie.swift; sourceTree = "<group>"; };
 		04D4FA832AB7B1F700AC679C /* Chap2BowTies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chap2BowTies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D4FA862AB7B1F700AC679C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D4FA882AB7B1F700AC679C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,30 @@
 				04B5F5422ABA5AEF008615F2 /* ColorAttributeTransformer.swift */,
 			);
 			path = transformation;
+			sourceTree = "<group>";
+		};
+		04B5F5442ABA5EFD008615F2 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				04D4FA9C2AB7B3C200AC679C /* SampleData.plist */,
+				04D4FA9E2AB7B3D700AC679C /* BowTies.xcdatamodeld */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		04B5F5452ABA5F1B008615F2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04B5F5462ABA5F31008615F2 /* BowTie.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		04B5F54A2ABA62AC008615F2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		04D4FA7A2AB7B1F700AC679C = {
@@ -90,9 +116,10 @@
 		04D4FA9B2AB7B3A200AC679C /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				04B5F54A2ABA62AC008615F2 /* controller */,
+				04B5F5452ABA5F1B008615F2 /* model */,
+				04B5F5442ABA5EFD008615F2 /* source */,
 				04B5F5402ABA5AB7008615F2 /* transformation */,
-				04D4FA9C2AB7B3C200AC679C /* SampleData.plist */,
-				04D4FA9E2AB7B3D700AC679C /* BowTies.xcdatamodeld */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -171,6 +198,7 @@
 				04D4FA8B2AB7B1F700AC679C /* RootViewController.swift in Sources */,
 				04D4FAA02AB7B3D700AC679C /* BowTies.xcdatamodeld in Sources */,
 				04D4FA872AB7B1F700AC679C /* AppDelegate.swift in Sources */,
+				04B5F5472ABA5F31008615F2 /* BowTie.swift in Sources */,
 				04D4FA892AB7B1F700AC679C /* SceneDelegate.swift in Sources */,
 				04B5F5432ABA5AEF008615F2 /* ColorAttributeTransformer.swift in Sources */,
 			);
