@@ -16,6 +16,7 @@
 		04D4FA932AB7B1FB00AC679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D4FA912AB7B1FB00AC679C /* LaunchScreen.storyboard */; };
 		04D4FA9D2AB7B3C200AC679C /* SampleData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D4FA9C2AB7B3C200AC679C /* SampleData.plist */; };
 		04D4FAA02AB7B3D700AC679C /* BowTies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04D4FA9E2AB7B3D700AC679C /* BowTies.xcdatamodeld */; };
+		04E677432ABE3E130035436B /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E677422ABE3E130035436B /* StorageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		04D4FA942AB7B1FB00AC679C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D4FA9C2AB7B3C200AC679C /* SampleData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleData.plist; sourceTree = "<group>"; };
 		04D4FA9F2AB7B3D700AC679C /* BowTies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BowTies.xcdatamodel; sourceTree = "<group>"; };
+		04E677422ABE3E130035436B /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		04B5F54A2ABA62AC008615F2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				04E677422ABE3E130035436B /* StorageController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				04D4FA872AB7B1F700AC679C /* AppDelegate.swift in Sources */,
 				04B5F5472ABA5F31008615F2 /* BowTie.swift in Sources */,
 				04D4FA892AB7B1F700AC679C /* SceneDelegate.swift in Sources */,
+				04E677432ABE3E130035436B /* StorageController.swift in Sources */,
 				04B5F5432ABA5AEF008615F2 /* ColorAttributeTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
