@@ -89,3 +89,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 Networking/GCD/.DS_Store
+
+CoreData/Chap1/HitList/HitList/.DS_Store
+
+CoreData/Chap1/HitList/HitList/Storage/.DS_Store
