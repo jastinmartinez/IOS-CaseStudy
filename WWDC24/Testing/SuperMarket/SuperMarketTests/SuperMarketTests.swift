@@ -11,7 +11,7 @@ protocol Inventory {
     func register(food: Food, amount: Int)
 }
 
-enum Food {
+enum Food: CaseIterable {
     case appple
 }
 
@@ -48,6 +48,15 @@ struct SuperMarketTests {
         #expect(value == 2)
     }
     
+    
+    @Test("Inventory prepare  available amount offood") func inventoryAmountOfFoodByDefaultIsTen() throws {
+        let (_, inventory) = makeSUT()
+        
+        let availableAmountOfApples = try #require(inventory.inventory[.appple])
+        
+        #expect(availableAmountOfApples == 10)
+    }
+    
 }
 
 // MARK: HELPERS
@@ -60,6 +69,12 @@ private func makeSUT() -> (SuperMarket, InventoryMock) {
 
 final class InventoryMock: Inventory {
     private(set) var inventory = [Food: Int]()
+    
+    init() {
+        for food in Food.allCases {
+            self.inventory[food] = 10
+        }
+    }
     
     func register(food: Food, amount: Int) {
         inventory[food] = amount
