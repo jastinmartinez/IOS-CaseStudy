@@ -28,18 +28,34 @@ final class SuperMarket {
 }
 
 
-
 struct SuperMarketTests {
     
     @Test("test that SuperMarket can sell Apples") func canSellApples() throws {
-        let inventory = InventoryMock()
-        let sut = SuperMarket(Inventory: inventory)
+        let (sut, inventory) = makeSUT()
         sut.sellApples(amount: 1)
         
         let value = try #require(inventory.inventory[.appple])
         
         #expect(value == 1)
     }
+    
+    @Test func canSellMoreThanOneApple() throws {
+        let (sut, inventory) = makeSUT()
+        sut.sellApples(amount: 2)
+        
+        let value = try #require(inventory.inventory[.appple])
+        
+        #expect(value == 2)
+    }
+    
+}
+
+// MARK: HELPERS
+
+private func makeSUT() -> (SuperMarket, InventoryMock) {
+    let inventory = InventoryMock()
+    let sut = SuperMarket(Inventory: inventory)
+    return (sut, inventory)
 }
 
 final class InventoryMock: Inventory {
