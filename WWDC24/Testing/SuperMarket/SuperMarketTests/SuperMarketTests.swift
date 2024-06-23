@@ -45,7 +45,7 @@ struct SuperMarketTests {
     }
     
     
-    @Test(arguments: [Food.appple, .pear]) func canSellOtherKindOfFood(food: Food) throws {
+    @Test(arguments: [Food.appple, .pear]) func canSellOtherKindOfFoodWithSameValue(food: Food) throws {
         let (sut, inventory) = makeSUT()
         sut.sellOtherKindOfFood(food:  food, amount: 1)
         
@@ -54,6 +54,21 @@ struct SuperMarketTests {
         #expect(value == 1)
     }
     
+    @Test(arguments: [FoodMapValue(food: .appple, value: 0),
+                      FoodMapValue(food: .pear, value: 3)]) func canSellOtherKindOfFoodWithDifferentValues(map: FoodMapValue) throws {
+        let (sut, inventory) = makeSUT()
+        sut.sellOtherKindOfFood(food:  map.food, amount: map.value)
+        
+        let value = try #require(inventory.inventory[map.food])
+        
+        #expect(value == map.value)
+    }
+    
+}
+
+struct FoodMapValue {
+    let food: Food
+    let value: Int
 }
 
 // MARK: HELPERS
