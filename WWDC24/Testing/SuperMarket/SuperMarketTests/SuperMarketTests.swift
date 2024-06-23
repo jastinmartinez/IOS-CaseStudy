@@ -13,6 +13,7 @@ protocol Inventory {
 
 enum Food: CaseIterable {
     case appple
+    case pear
 }
 
 final class SuperMarket {
@@ -24,6 +25,10 @@ final class SuperMarket {
     
     func sellApples(amount: Int = 0) {
         inventory.register(food: .appple, amount: amount)
+    }
+    
+    func sellOtherKindOfFood(food: Food, amount: Int) {
+        inventory.register(food: food, amount: amount)
     }
 }
 
@@ -39,22 +44,14 @@ struct SuperMarketTests {
         #expect(value == 1)
     }
     
-    @Test func canSellMoreThanOneApple() throws {
+    
+    @Test(arguments: [Food.appple, .pear]) func canSellOtherKindOfFood(food: Food) throws {
         let (sut, inventory) = makeSUT()
-        sut.sellApples(amount: 2)
+        sut.sellOtherKindOfFood(food:  food, amount: 1)
         
-        let value = try #require(inventory.inventory[.appple])
+        let value = try #require(inventory.inventory[food])
         
-        #expect(value == 2)
-    }
-    
-    
-    @Test("Inventory prepare  available amount offood") func inventoryAmountOfFoodByDefaultIsTen() throws {
-        let (_, inventory) = makeSUT()
-        
-        let availableAmountOfApples = try #require(inventory.inventory[.appple])
-        
-        #expect(availableAmountOfApples == 10)
+        #expect(value == 1)
     }
     
 }
@@ -69,12 +66,6 @@ private func makeSUT() -> (SuperMarket, InventoryMock) {
 
 final class InventoryMock: Inventory {
     private(set) var inventory = [Food: Int]()
-    
-    init() {
-        for food in Food.allCases {
-            self.inventory[food] = 10
-        }
-    }
     
     func register(food: Food, amount: Int) {
         inventory[food] = amount
